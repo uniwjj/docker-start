@@ -16,6 +16,11 @@
 # GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'ginger' WITH GRANT OPTION;
 # flush privileges;
 
+# MySQL8无法通过上面方式修改权限，可以采用下面方式
+# use mysql;
+# update user set host = '%' where user = 'root';
+# flush privileges;
+
 # docker network create common-network
 
 docker run -d \
