@@ -23,22 +23,22 @@
 
 # docker network create common-network
 
-docker run -d \
---name some-mysql \
---net common-network \
--p 3306:3306 \
--e MYSQL_ROOT_PASSWORD=ginger \
--e TZ=Asia/Shanghai \
-mysql/mysql-server:8.0.27-1.2.6-server --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
-
 # docker run -d \
 # --name some-mysql \
 # --net common-network \
 # -p 3306:3306 \
 # -e MYSQL_ROOT_PASSWORD=ginger \
 # -e TZ=Asia/Shanghai \
-# mysql/mysql-server:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+# mysql/mysql-server:8.0.27-1.2.6-server --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+
+docker run -d \
+--name some-mysql \
+--net common-network \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=ginger \
+-e TZ=Asia/Shanghai \
+mysql/mysql-server:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 
 
