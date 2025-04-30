@@ -15,16 +15,6 @@
 # SW_DATA_SOURCE_USER:root
 # SW_DATA_SOURCE_PASSWORD:root@1234
 
-docker run -d \
---name some-skywalking-oap \
---net common-network \
--e SW_STORAGE=elasticsearch7 \
--e SW_STORAGE_ES_CLUSTER_NODES=some-elasticsearch:9200 \
--e JAVA_OPTS=" -Xms512m -Xmx512m " \
--p 12800:12800 \
--p 11800:11800 \
-apache/skywalking-oap-server:8.7.0-es7
-
 # 需要将MySQL驱动放到/tmp/driver目录
 # docker run -d \
 # --name some-skywalking-oap \
@@ -38,4 +28,12 @@ apache/skywalking-oap-server:8.7.0-es7
 # -p 11800:11800 \
 # apache/skywalking-oap-server:8.7.0-es7
 
-
+docker run -d \
+--name some-skywalking-oap \
+--net common-network \
+-e SW_STORAGE=elasticsearch7 \
+-e SW_STORAGE_ES_CLUSTER_NODES=some-elasticsearch:9200 \
+-e JAVA_OPTS=" -Xms512m -Xmx512m " \
+-p 12800:12800 \
+-p 11800:11800 \
+apache/skywalking-oap-server:8.7.0-es7

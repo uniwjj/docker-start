@@ -15,4 +15,3 @@ docker run -d \
 -p 8080:8080 \
 apache/skywalking-ui:8.7.0
 
-

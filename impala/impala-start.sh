@@ -28,5 +28,16 @@
 # 运行impala shell
 # impala-shell -i localhost
 
-docker run --name some-impala -p 9000:9000 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -p 21000:21000 -p 21050:21050 -p 25000:25000 -p 25010:25010 -p 25020:25020 -d codingtony/impala
-
+docker run -d \
+--name some-impala \
+-p 9000:9000 \
+-p 50010:50010 \
+-p 50020:50020 \
+-p 50070:50070 \
+-p 50075:50075 \
+-p 21000:21000 \
+-p 21050:21050 \
+-p 25000:25000 \
+-p 25010:25010 \
+-p 25020:25020 \
+codingtony/impala

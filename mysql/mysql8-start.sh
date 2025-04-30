@@ -30,5 +30,3 @@ docker run -d \
 -e MYSQL_ROOT_PASSWORD=ginger \
 -e TZ=Asia/Shanghai \
 mysql/mysql-server:8.0.27-1.2.6-server --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
-

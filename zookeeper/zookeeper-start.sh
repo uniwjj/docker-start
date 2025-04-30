@@ -11,4 +11,3 @@ docker run -d \
 --net common-network \
 -p 2181:2181 \
 --name some-zookeeper zookeeper
-

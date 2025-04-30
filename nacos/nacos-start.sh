@@ -24,21 +24,6 @@
 # MYSQL_SERVICE_PASSWORD：指定密码
 # NACOS_AUTH_TOKEN_EXPIRE_SECONDS：指定Token过期时间，默认1800秒
 
-docker run -d \
---name some-nacos-mysql \
---net common-network \
--e MODE=standalone \
--p 8848:8848 \
--e SPRING_DATASOURCE_PLATFORM=mysql \
--e MYSQL_SERVICE_HOST=some-mysql \
--e MYSQL_SERVICE_PORT=3306 \
--e MYSQL_SERVICE_DB_NAME=nacos \
--e 'MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true' \
--e MYSQL_SERVICE_USER=nacos \
--e MYSQL_SERVICE_PASSWORD=nacos \
-uniwjj/nacos-server-arm:2.0.3
-
-
 # docker run -d \
 # --name some-nacos \
 # -e MODE=standalone \
@@ -54,3 +39,17 @@ uniwjj/nacos-server-arm:2.0.3
 # -p 9848:9848 \
 # nacos/nacos-server:2.0.3
 
+
+docker run -d \
+--name some-nacos-mysql \
+--net common-network \
+-e MODE=standalone \
+-p 8848:8848 \
+-e SPRING_DATASOURCE_PLATFORM=mysql \
+-e MYSQL_SERVICE_HOST=some-mysql \
+-e MYSQL_SERVICE_PORT=3306 \
+-e MYSQL_SERVICE_DB_NAME=nacos \
+-e 'MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true' \
+-e MYSQL_SERVICE_USER=nacos \
+-e MYSQL_SERVICE_PASSWORD=nacos \
+uniwjj/nacos-server-arm:2.0.3

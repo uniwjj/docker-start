@@ -8,11 +8,14 @@
 
 # 文件密码配置：https://prestodb.io/docs/current/security/password-file.html
 
+ROOT_DIR=$(dirname $0)/
+ROOT_DIR=$(cd $ROOT_DIR;pwd)
+
 docker run -d \
 --name some-presto \
 --net common-network \
 -p 8080:8080 \
--v ./config.properties:/opt/presto-server/etc/config.properties \
--v ./jvm.config:/opt/presto-server/etc/jvm.config \
+-v /$ROOT_DIR/conf/config.properties:/opt/presto-server/etc/config.properties \
+-v /$ROOT_DIR/conf/jvm.config:/opt/presto-server/etc/jvm.config \
 prestodb/presto:latest
 
