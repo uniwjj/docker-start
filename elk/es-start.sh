@@ -17,5 +17,5 @@ docker run -d \
 -p 9300:9300 \
 -e "discovery.type=single-node" \
 -e "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
-elasticsearch:7.16.1
+elasticsearch:9.0.1
 

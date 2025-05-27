@@ -10,10 +10,13 @@
 # 创建网络
 # docker network create common-network
 
+ROOT_DIR=$(dirname $0)/
+ROOT_DIR=$(cd $ROOT_DIR;pwd)
+
 docker run -d \
 --name some-logstash \
 --net common-network \
--v /usr/local/etc/elk/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
+-v $ROOT_DIR/conf/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
 -e xpack.monitoring.elasticsearch.url=http://some-elasticsearch:9200 \
-logstash:6.8.0
+logstash:9.0.1
 

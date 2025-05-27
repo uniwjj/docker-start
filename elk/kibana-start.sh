@@ -16,5 +16,5 @@ docker run -d \
 --net common-network \
 -p 5601:5601 \
 -e ELASTICSEARCH_URL=http://some-elasticsearch:9200 \
-kibana:7.14.2
+kibana:9.0.1
 
